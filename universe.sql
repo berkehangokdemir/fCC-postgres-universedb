@@ -51,7 +51,8 @@ CREATE TABLE public.galaxy (
     galaxy_id integer NOT NULL,
     movement_speed integer,
     description text,
-    name character varying(250) NOT NULL
+    name character varying(250) NOT NULL,
+    color character varying(100)
 );
 
 
@@ -267,16 +268,26 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.galaxy VALUES (1, 249, 'Gets its name from the area of the sky', 'Andromeda');
-INSERT INTO public.galaxy VALUES (2, 541, 'Appearance is similar to an insects antennae', 'Antennae');
-INSERT INTO public.galaxy VALUES (3, 88, 'It appears to rotate backwards', 'Backward');
-INSERT INTO public.galaxy VALUES (4, 395, 'It has a spectacular dark band of absorbing', 'Black Eye');
-INSERT INTO public.galaxy VALUES (5, 595, 'Named for Johann Elert Bode', 'Bode');
-INSERT INTO public.galaxy VALUES (6, 480, 'Looks are similar to a butterfly', 'Butterfly');
-INSERT INTO public.galaxy VALUES (7, 363, 'Visual appearance similar to spoked cartwheel', 'Cartwheel');
-INSERT INTO public.galaxy VALUES (8, 415, 'Appears similar in shape to a cigar', 'Cigar');
-INSERT INTO public.galaxy VALUES (9, 482, 'Named after the constellation', 'Circinus');
-INSERT INTO public.galaxy VALUES (10, 731, 'Named after its unusual appearance', 'Comet');
+INSERT INTO public.galaxy VALUES (1, 249, 'Gets its name from the area of the sky', 'Andromeda', NULL);
+INSERT INTO public.galaxy VALUES (2, 541, 'Appearance is similar to an insects antennae', 'Antennae', NULL);
+INSERT INTO public.galaxy VALUES (3, 88, 'It appears to rotate backwards', 'Backward', NULL);
+INSERT INTO public.galaxy VALUES (4, 395, 'It has a spectacular dark band of absorbing', 'Black Eye', NULL);
+INSERT INTO public.galaxy VALUES (5, 595, 'Named for Johann Elert Bode', 'Bode', NULL);
+INSERT INTO public.galaxy VALUES (6, 480, 'Looks are similar to a butterfly', 'Butterfly', NULL);
+INSERT INTO public.galaxy VALUES (7, 363, 'Visual appearance similar to spoked cartwheel', 'Cartwheel', NULL);
+INSERT INTO public.galaxy VALUES (8, 415, 'Appears similar in shape to a cigar', 'Cigar', NULL);
+INSERT INTO public.galaxy VALUES (9, 482, 'Named after the constellation', 'Circinus', NULL);
+INSERT INTO public.galaxy VALUES (10, 731, 'Named after its unusual appearance', 'Comet', NULL);
+INSERT INTO public.galaxy VALUES (11, 243, 'Named after a condor', 'Condor', NULL);
+INSERT INTO public.galaxy VALUES (12, 123, 'Resemblance of Eye of Sauron in LOTR', 'Eyee of Sauron', NULL);
+INSERT INTO public.galaxy VALUES (13, 233, 'Bright and spotty appearance', 'Fireworks', NULL);
+INSERT INTO public.galaxy VALUES (14, 243, 'Hockey stick resemblance', 'Hockey Stick', NULL);
+INSERT INTO public.galaxy VALUES (15, 653, 'Named after Art Hoag', 'Hoags Object', NULL);
+INSERT INTO public.galaxy VALUES (16, 623, 'Discovered by David Malin', 'Malin 1', NULL);
+INSERT INTO public.galaxy VALUES (17, 253, 'Appearance is similar to a mouse', 'Mice', NULL);
+INSERT INTO public.galaxy VALUES (18, 867, 'A band of light', 'Milky Way', NULL);
+INSERT INTO public.galaxy VALUES (19, 767, 'Named due to its slender appearance', 'Needle', NULL);
+INSERT INTO public.galaxy VALUES (20, 567, 'Similar in appearance to a pinwheel', 'Pinwheel', NULL);
 
 
 --
@@ -293,6 +304,16 @@ INSERT INTO public.moon VALUES (7, 'moon 7', 'Eight', false, 7);
 INSERT INTO public.moon VALUES (8, 'moon 8', 'Nine', false, 8);
 INSERT INTO public.moon VALUES (9, 'moon 9', 'Ten', false, 9);
 INSERT INTO public.moon VALUES (10, 'moon 10', 'Seventy', false, 10);
+INSERT INTO public.moon VALUES (11, 'moon 11', 'aaaa', false, 11);
+INSERT INTO public.moon VALUES (12, 'moon 12', 'abaa', false, 12);
+INSERT INTO public.moon VALUES (13, 'moon 13', 'acaa', false, 13);
+INSERT INTO public.moon VALUES (14, 'moon 14', 'adaa', false, 14);
+INSERT INTO public.moon VALUES (15, 'moon 15', 'aaba', false, 15);
+INSERT INTO public.moon VALUES (16, 'moon 16', 'aaca', false, 16);
+INSERT INTO public.moon VALUES (17, 'moon 17', 'aada', false, 17);
+INSERT INTO public.moon VALUES (18, 'moon 18', 'aaab', false, 18);
+INSERT INTO public.moon VALUES (19, 'moon 19', 'aaac', false, 19);
+INSERT INTO public.moon VALUES (20, 'moon 20', 'aaad', false, 20);
 
 
 --
@@ -309,6 +330,16 @@ INSERT INTO public.planet VALUES (7, 'planet7', 19345543, false, 7);
 INSERT INTO public.planet VALUES (8, 'planet8', 91345543, false, 8);
 INSERT INTO public.planet VALUES (9, 'planet9', 12345543, false, 9);
 INSERT INTO public.planet VALUES (10, 'planet10', 24345543, false, 10);
+INSERT INTO public.planet VALUES (11, 'planet11', 3463463, false, 11);
+INSERT INTO public.planet VALUES (12, 'planet12', 3463443, false, 12);
+INSERT INTO public.planet VALUES (13, 'planet13', 3663443, false, 13);
+INSERT INTO public.planet VALUES (14, 'planet14', 6663443, false, 14);
+INSERT INTO public.planet VALUES (15, 'planet15', 6663442, false, 15);
+INSERT INTO public.planet VALUES (16, 'planet16', 6663842, false, 16);
+INSERT INTO public.planet VALUES (17, 'planet17', 8663842, false, 17);
+INSERT INTO public.planet VALUES (18, 'planet18', 9663842, false, 18);
+INSERT INTO public.planet VALUES (19, 'planet19', 1663842, false, 19);
+INSERT INTO public.planet VALUES (20, 'planet20', 8663842, false, 20);
 
 
 --
@@ -325,6 +356,16 @@ INSERT INTO public.satellite VALUES (7, true, 'Japan', 7, 7, 'Kobe');
 INSERT INTO public.satellite VALUES (8, true, 'Germany', 8, 8, 'Bagel');
 INSERT INTO public.satellite VALUES (9, true, 'Italy', 9, 9, 'Pizza');
 INSERT INTO public.satellite VALUES (10, true, 'Mexico', 10, 10, 'Taco');
+INSERT INTO public.satellite VALUES (11, true, 'China', 11, 11, 'Sushi');
+INSERT INTO public.satellite VALUES (12, true, 'Venezuela', 12, 12, 'Lat');
+INSERT INTO public.satellite VALUES (13, true, 'Colombia', 13, 13, 'a1');
+INSERT INTO public.satellite VALUES (14, true, 'Brazil', 14, 14, 'Rio');
+INSERT INTO public.satellite VALUES (15, true, 'Argentina', 15, 15, 'Maradona');
+INSERT INTO public.satellite VALUES (16, true, 'Chile', 16, 16, 'Sanchez');
+INSERT INTO public.satellite VALUES (17, true, 'Portugal', 17, 17, 'CR7');
+INSERT INTO public.satellite VALUES (18, true, 'Spain', 18, 18, 'Matador');
+INSERT INTO public.satellite VALUES (19, true, 'Iran', 19, 19, 'Persian');
+INSERT INTO public.satellite VALUES (20, true, 'England', 20, 20, 'Lion');
 
 
 --
@@ -341,6 +382,16 @@ INSERT INTO public.star VALUES (7, 152, 'red', 'Cart', 7);
 INSERT INTO public.star VALUES (8, 434, 'lightgrey', 'Cigar', 8);
 INSERT INTO public.star VALUES (9, 587, 'purple', 'Circinus', 9);
 INSERT INTO public.star VALUES (10, 342, 'orange', 'Comt', 10);
+INSERT INTO public.star VALUES (11, 345, 'blue', 'star11', 11);
+INSERT INTO public.star VALUES (12, 315, 'green', 'star12', 12);
+INSERT INTO public.star VALUES (13, 313, 'yellow', 'star13', 13);
+INSERT INTO public.star VALUES (14, 312, 'black', 'star14', 14);
+INSERT INTO public.star VALUES (15, 311, 'white', 'star15', 15);
+INSERT INTO public.star VALUES (16, 310, 'gray', 'star16', 16);
+INSERT INTO public.star VALUES (17, 309, 'lightgray', 'star17', 17);
+INSERT INTO public.star VALUES (18, 308, 'red', 'star18', 18);
+INSERT INTO public.star VALUES (19, 307, 'purple', 'star19', 19);
+INSERT INTO public.star VALUES (20, 306, 'orange', 'star20', 20);
 
 
 --
@@ -379,6 +430,14 @@ SELECT pg_catalog.setval('public.star_star_id_seq', 1, false);
 
 
 --
+-- Name: galaxy galaxy_description_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.galaxy
+    ADD CONSTRAINT galaxy_description_key UNIQUE (description);
+
+
+--
 -- Name: galaxy galaxy_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -403,6 +462,14 @@ ALTER TABLE ONLY public.moon
 
 
 --
+-- Name: planet planet_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.planet
+    ADD CONSTRAINT planet_name_key UNIQUE (name);
+
+
+--
 -- Name: planet planet_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -411,11 +478,27 @@ ALTER TABLE ONLY public.planet
 
 
 --
+-- Name: satellite satellite_country_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.satellite
+    ADD CONSTRAINT satellite_country_key UNIQUE (country);
+
+
+--
 -- Name: satellite satellite_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.satellite
     ADD CONSTRAINT satellite_pkey PRIMARY KEY (satellite_id);
+
+
+--
+-- Name: star star_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.star
+    ADD CONSTRAINT star_name_key UNIQUE (name);
 
 
 --
@@ -461,3 +544,4 @@ ALTER TABLE ONLY public.planet
 --
 -- PostgreSQL database dump complete
 --
+
